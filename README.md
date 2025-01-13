@@ -37,6 +37,9 @@ services:
       - POSTGRES_USER=odoo
 
 ```
+![odoo1](https://github.com/user-attachments/assets/f4a09332-7b2b-4207-b831-56429d109ef5)
+
+
 
 ### 3
 
