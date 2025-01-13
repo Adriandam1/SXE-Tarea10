@@ -17,10 +17,35 @@ Se valora formato del Readme, capturas, commits, funcionalidad, capturas.
 ### 1) Instala Odoo 17 Community con docker-compose.
 ```bash
 
+version: '3.1'
+services:
+  web:
+    image: odoo:17.0
+    depends_on:
+      - mydb
+    ports:
+      - "8069:8069"
+    environment:
+    - HOST=mydb
+    - USER=odoo
+    - PASSWORD=myodoo
+  mydb:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=myodoo
+      - POSTGRES_USER=odoo
+
 ```
 
-###
+### 3
 
-###
+### 4
 
-###
+### 5
+
+enlaces:
+
+https://hub.docker.com/_/odoo
+
+https://www.digitalocean.com/community/tutorials/how-to-install-odoo-with-docker-on-ubuntu
