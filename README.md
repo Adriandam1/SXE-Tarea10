@@ -51,10 +51,10 @@ services: #array de los servicios que vamos a utilizar
   pgadmin:
     restart: unless-stopped #hacemos que el servicio continúe hasta que lo detengamos manualmente
     image: dpage/pgadmin4:latest #La versión más reciente de PgAdmin
-    container_name: PgAdminContainer #nombre del contenedor
+    container_name: PgAdminContainer
     depends_on: #indicamos que PgAdmin depende de la base de datos para iniciar para que PgAdmin no inicie antes
       - db
-    ports: #Hacemos que sea accesible desde el puerto 5050 para poder entrar al servicio desde fuera de docker
+    ports: #puerto de acceso
       - "5050:80"
     environment:
       - PGADMIN_DEFAULT_EMAIL= aabeijoncarbajo@danielcastelao.org
