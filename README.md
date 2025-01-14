@@ -16,6 +16,11 @@ Se valora formato del Readme, capturas, commits, funcionalidad, capturas.
 
 ### 1) Instala Odoo 17 Community con docker-compose.
 ```bash
+nano docker-compose.yml
+```
+
+**Creamos nuestro docker-compose:**
+```bash
 
 services: #array de los servicios que vamos a utilizar
   web:
@@ -68,52 +73,60 @@ volumes: # volumenes para la persistencia de datos
   odoo-db-data:
   pgadmin-data:
 ```
-odoo create database:
+
+```bash
+docker-compose up
+```
+**Comprobamos que odoo nos carga correctamente, y añadimos nuestras credenciales:**
 
 ![odoo2](https://github.com/user-attachments/assets/0fe67a1e-5861-49db-95c0-6438eb692044)
 
-login odoo:
+**Tras una espera podemos logearnos en nuestro odoo:**
 
 ![odoo3](https://github.com/user-attachments/assets/a7013301-aaf5-4064-a3b6-ef2f052a7271)
 
-apps odoo:
+**Comprobamos todas las herramientas que nos ofrece:**
 
 ![odoo4](https://github.com/user-attachments/assets/fdd9f8d4-4b14-4d55-b9cf-96984ddd1b58)
 
-comprobacion comunity edition:
+**Verificamos que estamos con la comunity edition:**
 
 ![odoo5](https://github.com/user-attachments/assets/8d20d666-8235-4741-a4be-e8a3fbd93e00)
 
-login pdadmin:
+
+### 2) Instala PgAdmin y conectala a lo BBDD.
+
+Ya tenemos pgadmin asi que hacemos login pdadmin:
 
 ![odoo6](https://github.com/user-attachments/assets/18e2cfa2-8cc7-49b2-bece-88f0bf921fb9)
 
-menu pgadmin:
+**Accedemos sin problema a pgadmin:**
 
 ![odoo7](https://github.com/user-attachments/assets/8e3cfcff-cf74-451c-b3f5-bf6682a8dfc1)
 
-añadir server a pgadmin:
+**PGAdmin no ha detectado nuestra base de datos así que tendremos que añadirla a la lista:**
 
 ![odoo8](https://github.com/user-attachments/assets/c4b9f1e4-b50f-49cd-a022-926ef8826f9c)
 
-comprobacion server en pgadmin:
+**Comprobamos que nuestra base de datos está funcionando en pgadmin:**
 
 ![odoo9](https://github.com/user-attachments/assets/4aa531ee-429c-4b7b-87ea-dc43e7e184a8)
 
+### 3) Preguntas teóricas:
+
+### ¿Que ocurre si en el ordenador local el puerto 5432 está ocupado?
+Si ya tenemos ocupado el puerto nos dará error y no podremos levantar el servicio.
+
+### ¿Y si lo estuviese el 8069?
+También nos dará error, ya que el puerto está en uso no nos deja levantar el servicio.
+
+### ¿Como puedes solucionarlo?
+Podríamos matar los servicios que esten utilizando los puertos que queremos, o si no, cambiar los puertos de odoo y de postgres por otros que nos seán válidos.
 
 
+---------------------------------------------
 
-
-
-
-
-### 3
-
-### 4
-
-### 5
-
-enlaces:
+**Bibliografía enlaces:**
 
 https://hub.docker.com/_/odoo
 
