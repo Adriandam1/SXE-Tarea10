@@ -62,8 +62,8 @@ services: #array de los servicios que vamos a utilizar
     ports: #puerto de acceso
       - "5050:80"
     environment:
-      - PGADMIN_DEFAULT_EMAIL= aabeijoncarbajo@danielcastelao.org
-      - PGADMIN_DEFAULT_PASSWORD= adrian123
+      - PGADMIN_DEFAULT_EMAIL=aabeijoncarbajo@danielcastelao.org
+      - PGADMIN_DEFAULT_PASSWORD=adrian123
     volumes: #realizamos la persistencia de datos para prevenir perdida de datos en caso de fallo.
       - pgadmin-data:/var/lib/pgadmin
 
